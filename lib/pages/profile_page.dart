@@ -36,6 +36,20 @@ class ProfilePage extends StatelessWidget {
             Text('Email: $email'),
             Text('Alamat: $address'),
             SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Kembali ke halaman login
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  (Route<dynamic> route) => false,
+                );
+              },
+              child: Text('Keluar'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+              ),
+            ),
           ],
         ),
       ),
